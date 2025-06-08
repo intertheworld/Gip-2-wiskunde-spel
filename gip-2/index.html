@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spel</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+
+<body>
+    <div class="settings-section">
+        <div class="button-container container" id="foto-categorie" style="padding-top: 2rem;">
+            <div id="foto-categorie">
+                <h2 class="textForCat">Foto Categorie</h2>
+                <ul style="padding-left: 0rem;">
+                    <li><input type="radio" name="foto-categorie" id="cb1" value="autos">
+                        <label for="cb1"><img class="gif-animation" data-category="auto"
+                                src="./img/icons/gifIcons/staticAuto.png" alt="radio Image"></label>
+                    </li>
+                    <li><input type="radio" name="foto-categorie" id="cb2" value="bergen">
+                        <label for="cb2"><img class="gif-animation" data-category="bergen"
+                                src="./img/icons/gifIcons/staticbergen.png" /></label>
+                    </li>
+                    <li><input type="radio" name="foto-categorie" id="cb3" value="kunst">
+                        <label for="cb3"><img class="gif-animation" data-category="kunst"
+                                src="./img/icons/gifIcons/statickunst.png" /></label>
+                    </li>
+                    <li><input type="radio" name="foto-categorie" id="cb4" value="ruimte">
+                        <label for="cb4"><img class="gif-animation" data-category="ruimte"
+                                src="./img/icons/gifIcons/staticruimte.png" /></label>
+                    </li>
+                    <li><input type="radio" name="foto-categorie" id="cb5" value="strand">
+                        <label for="cb5"><img class="gif-animation" data-category="strand"
+                                src="./img/icons/gifIcons/staticstrand.png" /></label>
+                    </li>
+                    <li><input type="radio" name="foto-categorie" id="cb6" value="dieren">
+                        <label for="cb6"><img class="gif-animation" data-category="dieren"
+                                src="./img/icons/gifIcons/staticdieren.png" /></label>
+                    </li>
+                </ul>
+            </div>
+            <div id="moeilijkheidsgraad">
+                <h2 class="textForCat">Moeilijkheidsgraad</h2>
+                <ul style="padding-left: 0rem;">
+                    <li><input type="radio" name="moeilijkheidsgraad" id="cb7" value="easy">
+                        <label for="cb7" class="square-icons"><img src="./img/icons/moelijkheid/easy-lvl.png" /></label>
+                    </li>
+                    <li><input type="radio" name="moeilijkheidsgraad" id="cb8" value="medium">
+                        <label for="cb8" class="square-icons"><img src="./img/icons/moelijkheid/medium-level.png" /></label>
+                    </li>
+                    <li><input type="radio" name="moeilijkheidsgraad" id="cb9" value="hard">
+                        <label for="cb9" class="square-icons"><img src="./img/icons/moelijkheid/complex-level.png" /></label>
+                    </li>
+                </ul>
+            </div>
+            <div id="symbool">
+                <h2 class="textForCat">Symbool kiezen</h2>
+                <ul style="padding-left: 0rem;">
+                    <li><input type="checkbox" name="symbols" id="cb10" value="-">
+                        <label for="cb10" class="square-icons"> <img src="./img/icons/symb/min.png" /></label>
+                    </li>
+                    <li><input type="checkbox" name="symbols" id="cb11" value="+">
+                        <label for="cb11" class="square-icons"><img src="./img/icons/symb/plus.png" /></label>
+                    </li>
+                    <li><input type="checkbox" name="symbols" id="cb12" value="/">
+                        <label for="cb12" class="square-icons"><img src="./img/icons/symb/deeldoor.png" /></label>
+                    </li>
+                    <li><input type="checkbox" name="symbols" id="cb13" value="*">
+                        <label for="cb13" class="square-icons"><img src="./img/icons/symb/vermenigvuldigen.png" /></label>
+                    </li>
+                </ul>
+            </div>
+            <div id="range">
+                <h2 class="textForCat">Bereik kiezen</h2>
+                <ul style="padding-left: 0rem;">
+                    <li><input type="radio" name="range" id="cb14" value="10">
+                        <label for="cb14" class="square-icons"> <img src="./img/icons/range/10.png" /></label>
+                    </li>
+                    <li><input type="radio" name="range" id="cb15" value="50">
+                        <label for="cb15" class="square-icons"><img src="./img/icons/range/50.png" /></label>
+                    </li>
+                    <li><input type="radio" name="range" id="cb16" value="100">
+                        <label for="cb16" class="square-icons"><img src="./img/icons/range/100.png" /></label>
+                    </li>
+                </ul>
+            </div>
+            <div class="button-container">
+                <button class="btn btn-primary" id="start-btn" type="button" onclick="beginOef()">Begin</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid game-section hidden" style="padding: 0px !important;">
+        <div class="achtergrondPhoto" id="content">
+        </div>
+        <button id="control-btn" class="control-btn hide" onclick="showResult()">
+            <svg viewBox="0 0 24 24" width="64" height="64">
+                <image href="./img/icons/gifIcons/resultGif.gif" width="100%" height="100%"
+                    preserveAspectRatio="xMidYMid meet" />
+            </svg>
+        </button>
+    </div>
+    <div class="result-section hidden">
+        <div class="container">
+            <div class="result-container">
+                <h1 class="text-center">Jouw resultaten:
+                </h1>
+                <!-- Doughnut Chart -->
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <div class="doughnut-chart-container">
+                            <canvas id="resultDoughnut"
+                                style="width:100%; min-width:20rem; margin-bottom:2rem;"></canvas>
+                        </div>
+
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+
+                <div class="button-container" id="result-button-container">
+                    <!-- From Uiverse.io by andrew-demchenk0 -->
+                    <button class="button" type="button" onclick="reloadbtn()"">
+                        <span class=" button__text">Refresh</span>
+                        <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="48"
+                                viewBox="0 0 48 48" height="48" class="svg">
+                                <path
+                                    d="M35.3 12.7c-2.89-2.9-6.88-4.7-11.3-4.7-8.84 0-15.98 7.16-15.98 16s7.14 16 15.98 16c7.45 0 13.69-5.1 15.46-12h-4.16c-1.65 4.66-6.07 8-11.3 8-6.63 0-12-5.37-12-12s5.37-12 12-12c3.31 0 6.28 1.38 8.45 3.55l-6.45 6.45h14v-14l-4.7 4.7z">
+                                </path>
+                                <path fill="none" d="M0 0h48v48h-48z"></path>
+                            </svg></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="index.js">
+</script>
+
+</html>

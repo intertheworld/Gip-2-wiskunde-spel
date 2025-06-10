@@ -23,7 +23,7 @@ Volg deze stappen om het spel te installeren:
    git clone https://github.com/intertheworld/Gip-2-wiskunde-spel.git
 2. **Ga naar de projectmap**:
    ```bash
-   cd wiskundespel
+   cd Gip-2-wiskunde-spel
 3. **Open het spel**:
    - Open het bestand `index.html` in een webbrowser (bijvoorbeeld Chrome of Firefox).
    - Je hebt geen extra software nodig, want alles werkt in de browser.
